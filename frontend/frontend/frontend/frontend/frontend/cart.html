@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🛒 Shopping Cart</h1>
+
+<div id="cart"></div>
+
+<button onclick="order()">Place Order</button>
+
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let output="";
+
+cart.forEach(item=>{
+
+output += `
+<div class="card">
+<h3>${item.name}</h3>
+<p>₹${item.price}</p>
+</div>
+`;
+
+});
+
+
+document.getElementById("cart").innerHTML=output;
+
+
+function order(){
+
+alert("Order placed successfully!");
+
+localStorage.removeItem("cart");
+
+}
+
+</script>
+
+</body>
+</html>
