@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Product Details</h1>
+
+<div class="card">
+
+<h2>Phone</h2>
+
+<p>Latest smartphone product</p>
+
+<h3>Price: ₹15000</h3>
+
+<button onclick="addCart()">
+Add Cart
+</button>
+
+</div>
+
+
+<script>
+
+function addCart(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:"Phone",
+price:15000
+});
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert("Added to cart");
+
+}
+
+</script>
+
+</body>
+</html>
